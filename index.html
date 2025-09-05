@@ -1,45 +1,113 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แนะนำตัวทีมงาน</title>
+    <title>Portfolio My Team</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome สำหรับ icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <header>
-        <h1>ทีมของเรา</h1>
-        <p>รู้จักกับสมาชิกทีมของเรา 4 คน</p>
+        <h1>Portfolio My Team</h1>
+        <p>ข้อมูลทีมงานภายในกลุ่มการฝึกงาน</p>
     </header>
 
     <main>
         <section class="team">
-            <div class="member">
+            <div class="member" data-id="67319010014" data-dept="วิศวกรรมคอมพิวเตอร์" data-age="21"
+                data-skill="UX/UI, ถ่ายภาพ, Web Design" data-phone="081-234-5678"
+                data-email="jittakorn@example.com" data-github="https://github.com/jittakorn">
                 <img src="img/jittakorn.jpg" alt="Member 1">
                 <h2>จิตรกร ไชยะเส็น</h2>
-                <div class="card"></div>
-                <p>Front-end Developer</p>
+                <p>67319010014</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">UX/UI</span>
+                    <span class="skill-tag">ถ่ายภาพ</span>
+                    <span class="skill-tag">Web Design</span>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/jittakorn" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:jittakorn@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <div class="member">
-                <img src="https://via.placeholder.com/150" alt="Member 2">
-                <h2>สมหญิง</h2>
-                <p>Back-end Developer</p>
+
+            <div class="member" data-id="67319010001" data-dept="วิศวกรรมซอฟต์แวร์" data-age="22"
+                data-skill="PHP, Database, SQL" data-phone="082-999-1234" data-email="somying@example.com"
+                data-github="https://github.com/somying">
+                <img src="img/natida.jpg" alt="Member 2">
+                <h2>ณัฏฐธิดา สันทะวงศ์</h2>
+                <p>67319010001</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Database</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/somying" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:somying@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <div class="member">
-                <img src="https://via.placeholder.com/150" alt="Member 3">
-                <h2>วิชาญ</h2>
-                <p>UI/UX Designer</p>
+
+            <div class="member" data-id="67319010002" data-dept="วิทยาการคอมพิวเตอร์" data-age="20"
+                data-skill="HTML, CSS, JavaScript" data-phone="083-456-7890" data-email="pattira@example.com"
+                data-github="https://github.com/pattira">
+                <img src="img/pattira.jpg" alt="Member 3">
+                <h2>ภัทธิรา ผัดวงค์</h2>
+                <p>67319010002</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">JS</span>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/pattira" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:pattira@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-            <div class="member">
-                <img src="https://via.placeholder.com/150" alt="Member 4">
-                <h2>รัตนา</h2>
-                <p>Project Manager</p>
+
+            <div class="member" data-id="67319010015" data-dept="ระบบเครือข่าย" data-age="23"
+                data-skill="Server, Deploy, Linux" data-phone="084-111-2222" data-email="kanyarat@example.com"
+                data-github="https://github.com/kanyarat">
+                <img src="img/kanyarat.jpg" alt="Member 4">
+                <h2>กัญญารัตน์ สุขใจ</h2>
+                <p>67319010015</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">Server</span>
+                    <span class="skill-tag">Deploy</span>
+                    <span class="skill-tag">Linux</span>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/kanyarat" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:kanyarat@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
+        </section>
+
+        <!-- กล่องแสดงข้อมูล (อยู่ใต้ทีมทั้งหมด) -->
+        <section id="member-info" class="info-box">
+            <img id="info-img" src="" alt="Profile">
+            <h2 id="info-name">เลือกสมาชิกเพื่อดูรายละเอียด</h2>
+            <ul>
+                <li><strong>รหัส:</strong> <span id="info-id"></span></li>
+                <li><strong>แผนก:</strong> <span id="info-dept"></span></li>
+                <li><strong>อายุ:</strong> <span id="info-age"></span></li>
+                <li><strong>ความสามารถ:</strong> <span id="info-skill"></span></li>
+                <li><strong>เบอร์:</strong> <span id="info-phone"></span></li>
+                <li><strong>Email:</strong> <span id="info-email"></span></li>
+                <li><strong>GitHub:</strong> <a id="info-github" href="#" target="_blank">Link</a></li>
+            </ul>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 ทีมของเรา</p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
+
 </html>
