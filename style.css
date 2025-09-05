@@ -41,7 +41,7 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
-    padding: 50px 20px;
+    padding: 10px 10px;
 }
 
 .member {
@@ -90,10 +90,36 @@ footer {
 .info-box {
     max-width: 600px;
     margin: 30px auto;
-    padding: 20px;
+    padding: 30px;
     border-radius: 12px;
     background: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-align: left;
+    display: none; /* ซ่อนก่อน */
+}
+
+.info-box img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 15px;
+    border: 3px solid #4682b4;
+}
+
+.info-box h2 {
     text-align: center;
-    display: none; /* ซ่อนไว้ก่อน */
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box li {
+    padding: 6px 0;
+    font-size: 16px;
 }
