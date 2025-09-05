@@ -11,20 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const infoPhone = document.getElementById("info-phone");
     const infoEmail = document.getElementById("info-email");
 
-    let activeMember = null; // เก็บ member ที่ถูกเลือก
+    let activeMember = null;
 
     members.forEach(member => {
         member.addEventListener("click", () => {
             const name = member.querySelector("h2").innerText;
+            const imgSrc = member.querySelector("img").getAttribute("src");
 
             if (activeMember === member) {
-                // ถ้าคลิกซ้ำ -> ปิดกล่อง
-                infoBox.style.display = "none";
+                // คลิกซ้ำ -> ซ่อนกล่อง
+                infoBox.classList.remove("show");
                 activeMember = null;
             } else {
-                // อัปเดตข้อมูลใหม่
-                const imgSrc = member.querySelector("img").getAttribute("src");
-
+                // อัปเดตข้อมูล
                 infoImg.src = imgSrc;
                 infoName.textContent = name;
                 infoId.textContent = member.dataset.id;
@@ -34,8 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 infoPhone.textContent = member.dataset.phone;
                 infoEmail.textContent = member.dataset.email;
 
-                infoBox.style.display = "block";
+                infoBox.classList.add("show");
                 activeMember = member;
+
+                // เลื่อนลงไปกล่อง info
+                infoBox.scrollIntoView({ behavior: "smooth", block: "start" });
             }
         });
     });

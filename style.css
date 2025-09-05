@@ -1,3 +1,4 @@
+/* Reset และ font */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 }
 
 html, body {
-    height: 100%; /* ให้ body กินเต็มความสูง */
+    height: 100%;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
     flex-direction: column;
 }
 
+/* Header */
 header {
     text-align: center;
     padding: 50px 20px;
@@ -32,16 +34,18 @@ header p {
     color: #fff;
 }
 
+/* Main */
 main {
-    flex: 1; /* ให้ main ขยายกินพื้นที่ที่เหลือ */
+    flex: 1;
 }
 
+/* Team layout */
 .team {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
-    padding: 10px 10px;
+    padding: 20px;
 }
 
 .member {
@@ -80,6 +84,7 @@ main {
     transform: scale(1.1) rotate(5deg);
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -87,6 +92,7 @@ footer {
     color: #333;
 }
 
+/* Info Box */
 .info-box {
     max-width: 600px;
     margin: 30px auto;
@@ -95,7 +101,17 @@ footer {
     background: #fff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     text-align: left;
-    display: none; /* ซ่อนก่อน */
+
+    /* สำหรับ animation แสดง/ซ่อน */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.info-box.show {
+    max-height: 800px; /* สูงพอให้ข้อมูลทั้งหมดแสดง */
+    opacity: 1;
 }
 
 .info-box img {
